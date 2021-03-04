@@ -170,4 +170,12 @@ d
 .white {
   color: ghostwhite;
 }
+
+.social-media a {
+  color: white;
+}
+
+.social-media a:visited {
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
