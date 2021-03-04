@@ -78,14 +78,17 @@ html {
   border-bottom: 2px solid #1f2c6c;
 }
 
+.section-light, .section-color {
+  padding: 10vh 10vw;
+}
+
+.section-light + .section-light {
+  padding-top: 5vh;
+}
+
 .main-content {
   padding-top: 2rem;
   color: #2a2a2a;
-}
-
-.main-content .section-color.services .title,
-.main-content .section-color.services .subtitle {
-  color: white;
 }
 
 .main-content .section-color.services i {
@@ -118,6 +121,15 @@ html {
   padding-bottom: 3rem;
 }
 
+.section-color {
+  background-color: #24A882;
+}
+
+.section-color .title, .section-color .subtitle {
+  color: white;
+}
+
+d
 .fa-download {
   color: #43485c;
 }
