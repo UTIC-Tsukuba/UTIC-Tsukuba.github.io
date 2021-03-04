@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Poppins|Kaushan+Script");
 .has-vertically-aligned-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,11 +9,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .header-wrapper {
@@ -30,49 +24,6 @@
   color: white;
 }
 
-.hero .hero-foot {
-  height: 50px;
-  background: white;
-}
-
-@media (max-width: 599px) {
-  .hero .hero-foot {
-    display: none;
-  }
-}
-
-.hero .hero-foot .hero-foot--wrapper {
-  margin: 7px auto;
-  height: 50px;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop {
-  line-height: 38px;
-  font-weight: bold;
-  text-transform: none;
-  letter-spacing: 1px;
-  font-size: 1rem;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li {
-  display: inline-block;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li.is-active a {
-  border-bottom: 2px solid #24A882;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a {
-  color: #24A882 !important;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
-  color: #24A882;
-  border-bottom: 2px solid #1f2c6c;
-}
-
 .section-light, .section-color {
   padding: 10vh 10vw;
 }
@@ -81,17 +32,17 @@
   padding-top: 5vh;
 }
 
-.main-content {
+.section-light {
   padding-top: 2rem;
   color: #2a2a2a;
 }
 
-.main-content .section-color.services i {
+.section-light .section-color.services i {
   font-size: 3rem;
   padding: 20px;
 }
 
-.main-content .section-heading {
+.section-light .heading {
   border-bottom: 3px solid lightgray;
   text-transform: uppercase;
   font-size: 1rem;
@@ -99,7 +50,7 @@
   padding: 0 10px 5px 10px;
 }
 
-.main-content .section-title {
+.section-light .title {
   color: #24A882;
   text-transform: uppercase;
   font-size: 2rem;
@@ -108,7 +59,7 @@
   padding-bottom: 0.5rem;
 }
 
-.main-content .section-subtitle {
+.section-light .subtitle {
   color: #363636;
   font-size: 1rem;
   padding-bottom: 1.5rem;
