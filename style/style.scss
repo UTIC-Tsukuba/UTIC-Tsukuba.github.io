@@ -1,3 +1,7 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .has-vertically-aligned-content {
   display: flex;
   flex-direction: column;
@@ -78,9 +82,9 @@
 
 .section-subtitle {
   font-family: "Montserrat", sans-serif;
-  color: #363636;
-  font-size: 1rem;
-  padding-top: 1rem;
+  font-weight: bold;
+  color: silver;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   padding-bottom: 3rem;
 }
@@ -143,7 +147,9 @@ d .fa-download {
 .explore {
   font-weight: bold;
   color: #24A882 !important;
+  letter-spacing: 2px;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .is-green {
@@ -157,22 +163,9 @@ d .fa-download {
   }
 }
 
-// .impact {
-//   animation-name: grugru;
-//   animation-duration: 2s;
-// }
-
-@keyframes grugru {
-  0% {
-    // transform: scale(0.4);
-  }
-
-  50% {
-    transform: rotate(-10deg);
-  }
-
-  100% {
-    transform: rotate(10deg);
-    transform: scale(1);
-  }
+.section-title,
+.section-subtitle,
+.title,
+.subtitle {
+  font-family: "Montserrat", sans-serif;
 }

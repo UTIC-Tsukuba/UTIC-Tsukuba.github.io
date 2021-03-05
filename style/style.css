@@ -1,3 +1,7 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .has-vertically-aligned-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,9 +75,9 @@
 
 .section-subtitle {
   font-family: "Montserrat", sans-serif;
-  color: #363636;
-  font-size: 1rem;
-  padding-top: 1rem;
+  font-weight: bold;
+  color: silver;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   padding-bottom: 3rem;
 }
@@ -135,7 +139,9 @@ d .fa-download {
 .explore {
   font-weight: bold;
   color: #24A882 !important;
+  letter-spacing: 2px;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .is-green {
@@ -149,33 +155,10 @@ d .fa-download {
   }
 }
 
-@-webkit-keyframes grugru {
-  0% {
-  }
-  50% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  100% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes grugru {
-  0% {
-  }
-  50% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  100% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+.section-title,
+.section-subtitle,
+.title,
+.subtitle {
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

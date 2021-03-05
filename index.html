@@ -5,32 +5,29 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Showcase - Personal Portfolio One Page Bulma Theme</title>
+  <title>UTIC</title>
   <!-- Bulma Version 0.9.0-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/2828f7885a.js"
     integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
-  <style>
-    body {
-      font-family: "Inter", Arial, Helvetica, sans-serif;
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2828f7885a.js"
+    integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="./style/style.css" />
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <style>  
+    [data-aos="guruguru"] {
+      opacity: 0;
+      transform: scale(0.5);
+      transition-property: transform, opacity;
     }
-  
-    .title,
-    .subtitle {
-      font-family: "Montserrat", sans-serif;
-    }
-  
-    .social-media i {
-      margin-right: 1rem;
+    [data-aos="guruguru"].aos-animate {
+      opacity: 1;
+      transform: rotate(10deg) scale(1);
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="./style/style.css" />
-  <script src="https://kit.fontawesome.com/2828f7885a.js"
-    integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
-    crossorigin="anonymous"></script>
-  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 
 <body>
@@ -53,9 +50,9 @@
           <p class="subtitle is-3 has-text-white">We Are UTIC</p>
           <p class="mb-6 has-text-white">私たちUTICは、交換留学、語学研修、インターンなど、筑波大生の"海外チャレンジ"をサポートしています。</p>
           <div class="social-media">
-            <a href="https://twitter.com/u_tic"><i class="fab fa-twitter fa-lg"></i></a>
-            <a href="https://www.instagram.com/utic.tsukuba/"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://www.facebook.com/utic.tsukuba/"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a class="mx-2" href="https://twitter.com/u_tic"><i class="fab fa-twitter fa-lg" alt="twitter"></i></a>
+            <a class="mx-3" href="https://www.instagram.com/utic.tsukuba/"><i class="fab fa-instagram fa-lg" alt="instagram"></i></a>
+            <a class="mx-2" href="https://www.facebook.com/utic.tsukuba/"><i class="fab fa-facebook-f fa-lg" alt="facebook"></i></a>
           </div>
         </div>
       </div>
@@ -69,7 +66,7 @@
   </div>
   <!-- End Header -->
 
-  <div class="section-light px-6 py-4">
+  <div class="section-light px-6 py-4" data-aos="fade-in">
     <h1 class="section-title has-text-centered">
       Build your future
     </h1>
@@ -78,10 +75,7 @@
     </h1>
     <div class="container mb-6">
       <article>
-        By becoming a TED member, you’ll be on the frontier of a brighter future, helping us build a community united by the
-        power of knowledge. Together, we’ll share new perspectives, discover innovative ways of thinking and maybe even change
-        the world. As a non-profit, we also rely on support from our audience to further our mission of making knowledge
-        accessible to everyone.
+        隴西の李徴は博學才穎、天寶の末年、若くして名を虎榜に連ね、ついで江南尉に補せられたが、性、狷介、自ら恃む所頗る厚く、賤吏に甘んずるを潔しとしなかつた。いくばくもなく官を退いた後は、故山、くわく略に歸臥し、人と交を絶つて、ひたすら詩作に耽つた。下吏となつて長く膝を俗惡な大官の前に屈するよりは、詩家としての名を死後百年に遺さうとしたのである。しかし、文名は容易に揚らず、生活は日を逐うて苦しくなる。李徴は漸く焦躁に驅られて來た。この頃から其の容貌も峭刻となり、肉落ち骨秀で、眼光のみ徒らに烱々として、曾て進士に登第した頃の豐頬の美少年の俤は、何處に求めやうもない。
       </article>
     </div>
   </div>
@@ -91,17 +85,17 @@
       <div class="container">
         <div class="columns">
           <div class="column is-4">
-            <figure class="image is-3by2">
+            <figure class="image is-3by2" data-aos="fade-in">
               <img src="image/pexels-fauxels-3184660.jpg" alt="image">
             </figure>
           </div>
           <div class="column is-4">
-            <figure class="image is-3by2">
+            <figure class="image is-3by2" data-aos="fade-in">
               <img src="image/pexels-fauxels-3184660.jpg" alt="image">
             </figure>
           </div>
           <div class="column is-4">
-            <figure class="image is-3by2">
+            <figure class="image is-3by2" data-aos="fade-in">
               <img src="image/pexels-fauxels-3184660.jpg" alt="image">
             </figure>
           </div>
@@ -113,7 +107,7 @@
     </div>
   </div>
 
-  <div class="section-light px-6 py-4">
+  <div class="section-light px-6 py-4" data-aos="fade-in">
     <h1 class="section-title has-text-centered">
       Tsukuba to the world
     </h1>
@@ -121,6 +115,9 @@
       筑波大生の軌跡
     </h1>
     <div class="container has-text-centered">
+      <article>
+        隴西の李徴は博學才穎、天寶の末年、若くして名を虎榜に連ね、ついで江南尉に補せられたが、性、狷介、自ら恃む所頗る厚く、賤吏に甘んずるを潔しとしなかつた。いくばくもなく官を退いた後は、故山、くわく略に歸臥し、人と交を絶つて、ひたすら詩作に耽つた。下吏となつて長く膝を俗惡な大官の前に屈するよりは、詩家としての名を死後百年に遺さうとしたのである。しかし、文名は容易に揚らず、生活は日を逐うて苦しくなる。李徴は漸く焦躁に驅られて來た。この頃から其の容貌も峭刻となり、肉落ち骨秀で、眼光のみ徒らに烱々として、曾て進士に登第した頃の豐頬の美少年の俤は、何處に求めやうもない。
+      </article>
       <figure class="image is-16by9">
         <img src="image/canada.png">
       </figure>
@@ -132,23 +129,23 @@
 
   <div class="hero is-large">
     <div class="hero-body">
-      <div class="container has-text-centered">
-        <img src="image/uticishere.png" data-aos="zoom-in" data-aos-duration="1000">
+      <div class="container has-text-centered mx-6 my-6">
+        <img src="image/uticishere.png" data-aos="guruguru" data-aos-duration="1000" style="width: 100%; max-width: 640px;"">
       </div>
     </div>
   </div>
 
   <div class="section-color px-6 py-6">
-    <h1 class="section-title has-text-centered">
-      Here's what you can expect
-    </h1>
-    <h1 class="section-subtitle has-text-centered">
-      UTICで得られる機会
-    </h1>
-    <div class="container">
+    <div class="container" data-aos="fade-in">
+      <h1 class="section-title has-text-centered">
+        Here's what you can expect
+      </h1>
+      <h1 class="section-subtitle has-text-centered">
+        UTICで得られる機会
+      </h1>
       <div class="columns has-text-centered">
         <div class="column">
-          <div class="notification is-light">
+          <div class="notification is-light" data-aos="flip-down" data-aos-duration="800">
             <i class="fas fa-user-tag fa-4x"></i>
             <hr />
             <h1 class="title is-5 has-text-dark">
@@ -161,7 +158,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="notification is-light">
+          <div class="notification is-light" data-aos="flip-down" data-aos-duration="800">
             <i class="fas fa-globe-asia fa-4x"></i>
             <hr />
             <h1 class="title is-5 has-text-dark">
@@ -174,7 +171,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="notification is-light">
+          <div class="notification is-light" data-aos="flip-down" data-aos-duration="800">
             <i class="fas fa-comments fa-4x"></i>
             <hr />
             <h1 class="title is-5 has-text-dark">
@@ -193,7 +190,7 @@
     </div>
   </div>
 
-  <div class="section-light">
+  <div class="section-light" data-aos="fade-in">
     <h1 class="section-title has-text-centered">
       Join us now
     </h1>
@@ -202,25 +199,36 @@
     </h1>
   </div>
 
-  <div class="footer">
-    <p>
-      <strong class="white">Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>.
-      The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
-      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
+  <footer class="pt-4 has-text-centered">
+    <nav class="level has-background-grey px-2 py-2">
+      <div class="level-left">
+        <div class="level-item">
+          <a class="mx-2" href="https://twitter.com/u_tic"><i class="fab fa-twitter fa-lg has-text-grey-lighter"></i></a>
+          <a class="mx-3" href="https://www.instagram.com/utic.tsukuba/"><i class="fab fa-instagram fa-lg has-text-grey-lighter"></i></a>
+          <a class="mx-2" href="https://www.facebook.com/utic.tsukuba/"><i class="fab fa-facebook-f fa-lg has-text-grey-lighter"></i></a>
+        </div>
+        <div class="level-item px-1">
+          <p class="has-text-grey-lighter">
+            info.utic&commat;gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="level-right">
+        <p class="has-text-grey-lighter">
+          &copy; UTIC 2020 All Rights Reserved.
+        </p>
+      </div>
+    </nav>
+  </footer>
   <!-- End Footer -->
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../js/showcase.js"></script>
-  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   <script>
     AOS.init({
       easing: "ease-out",
-      duration: 800,
+      duration: 1200,
     });
   </script>
 </body>
