@@ -13,9 +13,9 @@ html {
 }
 
 #hero-top {
-  background-image: url(https://images.pexels.com/photos/4116708/pexels-photo-4116708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(https://images.pexels.com/photos/2916828/pexels-photo-2916828.jpeg);
   // background: linear-gradient(rgba(31, 44, 108, 0.65), rgba(31, 44, 108, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
-  background: linear-gradient(rgba(35, 203, 165, 0.55), rgba(7, 135, 102, 0.55)), rgba(0, 0, 0, 0.55) url("https://images.pexels.com/photos/4116708/pexels-photo-4116708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
+  background: linear-gradient(rgba(35, 203, 165, 0.55), rgba(7, 135, 102, 0.55)), rgba(0, 0, 0, 0.55) url(https://images.pexels.com/photos/2916828/pexels-photo-2916828.jpeg) no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
@@ -76,7 +76,7 @@ html {
   font-size: 2.5rem;
   line-height: 1;
   letter-spacing: 2px;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 0.5rem;
 }
 
@@ -166,6 +166,46 @@ d .fa-download {
 .section-title,
 .section-subtitle,
 .title,
-.subtitle {
+.subtitle,
+.montserrat {
   font-family: "Montserrat", sans-serif;
+}
+
+.mobile-fullwidth {
+  margin-left: calc(((100vw - 100%) / 2) * -1);
+  margin-right: calc(((100vw - 100%) / 2) * -1);
+}
+
+.odakyu {
+  margin: 0 auto;
+  font-weight: bold;
+  font-family: sans-serif;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0);
+  -webkit-background-clip: text;
+  background-image: url(https://images.pexels.com/photos/589808/pexels-photo-589808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  filter: saturate(200%);
+  background-size: 100vw;
+
+  h1 {
+    font-weight: bold;
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: 720px) {
+    h1 {
+      font-size: 2.5rem;
+      word-break: break-word;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.fa-canadian-maple-leaf {
+  font-size: 8rem;
+  color: #ff0000;
 }

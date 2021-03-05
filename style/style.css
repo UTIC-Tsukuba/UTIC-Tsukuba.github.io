@@ -20,9 +20,9 @@ html {
 }
 
 #hero-top {
-  background-image: url(https://images.pexels.com/photos/4116708/pexels-photo-4116708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 203, 165, 0.55)), to(rgba(7, 135, 102, 0.55))), rgba(0, 0, 0, 0.55) url("https://images.pexels.com/photos/4116708/pexels-photo-4116708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
-  background: linear-gradient(rgba(35, 203, 165, 0.55), rgba(7, 135, 102, 0.55)), rgba(0, 0, 0, 0.55) url("https://images.pexels.com/photos/4116708/pexels-photo-4116708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
+  background-image: url(https://images.pexels.com/photos/2916828/pexels-photo-2916828.jpeg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 203, 165, 0.55)), to(rgba(7, 135, 102, 0.55))), rgba(0, 0, 0, 0.55) url(https://images.pexels.com/photos/2916828/pexels-photo-2916828.jpeg) no-repeat;
+  background: linear-gradient(rgba(35, 203, 165, 0.55), rgba(7, 135, 102, 0.55)), rgba(0, 0, 0, 0.55) url(https://images.pexels.com/photos/2916828/pexels-photo-2916828.jpeg) no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
@@ -69,7 +69,7 @@ html {
   font-size: 2.5rem;
   line-height: 1;
   letter-spacing: 2px;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 0.5rem;
 }
 
@@ -158,7 +158,47 @@ d .fa-download {
 .section-title,
 .section-subtitle,
 .title,
-.subtitle {
+.subtitle,
+.montserrat {
   font-family: "Montserrat", sans-serif;
+}
+
+.mobile-fullwidth {
+  margin-left: calc(((100vw - 100%) / 2) * -1);
+  margin-right: calc(((100vw - 100%) / 2) * -1);
+}
+
+.odakyu {
+  margin: 0 auto;
+  font-weight: bold;
+  font-family: sans-serif;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0);
+  -webkit-background-clip: text;
+  background-image: url(https://images.pexels.com/photos/589808/pexels-photo-589808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  -webkit-filter: saturate(200%);
+          filter: saturate(200%);
+  background-size: 100vw;
+}
+
+.odakyu h1 {
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+@media screen and (max-width: 720px) {
+  .odakyu h1 {
+    font-size: 2.5rem;
+    word-break: break-word;
+  }
+  .odakyu br {
+    display: none;
+  }
+}
+
+.fa-canadian-maple-leaf {
+  font-size: 8rem;
+  color: #ff0000;
 }
 /*# sourceMappingURL=style.css.map */
