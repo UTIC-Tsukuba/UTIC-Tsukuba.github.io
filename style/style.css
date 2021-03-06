@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 html {
   font-family: Helvetica, Arial, sans-serif;
 }
@@ -63,7 +64,7 @@ html {
 }
 
 .section-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -74,7 +75,7 @@ html {
 }
 
 .section-subtitle {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: silver;
   font-size: 1.2rem;
@@ -140,7 +141,7 @@ d .fa-download {
   font-weight: bold;
   color: #24A882 !important;
   letter-spacing: 2px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
 
@@ -160,7 +161,7 @@ d .fa-download {
 .title,
 .subtitle,
 .montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mobile-fullwidth {
@@ -200,5 +201,75 @@ d .fa-download {
 .fa-canadian-maple-leaf {
   font-size: 8rem;
   color: #ff0000;
+}
+
+.typewriter {
+  display: inline-block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.typewriter h1.section-title {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #ff0000;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  -webkit-animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+          animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+@keyframes blink-caret {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
 /*# sourceMappingURL=style.css.map */
