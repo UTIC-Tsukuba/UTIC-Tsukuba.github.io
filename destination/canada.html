@@ -8,7 +8,6 @@
   <title>UTIC</title>
   <!-- Bulma Version 0.9.0-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,800" rel="stylesheet">
   <script src="https://kit.fontawesome.com/2828f7885a.js"
     integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
     crossorigin="anonymous"></script>
@@ -19,39 +18,204 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" type="text/css" href="../style/style.css" />
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-  <style>
-  </style>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    var fullList = [['Province(州)', 'Cumulative cases (累計陽性者数)', 'Population (人口)']];
+    const provinceList = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Northwest Territories', 'Nunavut', 'Yukon'];
+    const populationByProvince = [4067175, 4648055, 1278365, 747101, 519716, 923598, 13448494, 142907, 8164361, 1098352, 41786, 35944, 35874];
+    fetch('https://api.opencovid.ca/summary?loc=prov') // APIのURL
+      .then(response => {
+        return response.json();
+      })
+      .then(myJson => {
+        // 取得したURLをスラッシュ記号で分割し、犬種を表した要素を取得する
+        const jsondata = myJson['summary']
+        console.log(jsondata);
+        for (var i=0; i<provinceList.length; i++){
+          // console.log(provinceList[i]);
+          fullList.push([provinceList[i], jsondata[i]['cumulative_cases'], populationByProvince[i]]);
+        }
+        console.log(fullList);
+      })
+      .then(function(){
+        google.charts.load('current', {
+          'packages': ['geochart'],
+          // Note: you will need to get a mapsApiKey for your project.
+          // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+          'mapsApiKey': 'AIzaSyBPLT7zxufGM4OF6CQbq9mrkESLODBntyI'
+        });
+        console.log("drawing");
+        google.charts.setOnLoadCallback(drawMarkersMap);
+        function drawMarkersMap() {
+          var data = google.visualization.arrayToDataTable(fullList);
+
+          var options = {
+            region: 'CA',
+            displayMode: 'markers',
+            resolution: 'provinces'
+          };
+
+          var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+          chart.draw(data, options);
+        }
+      });
+  </script>
 </head>
 
 <body>
 
   <section class="hero is-fullheight">
     <div class="container odakyu has-vertically-aligned-content px-6">
-      <h1 class="montserrat mb-6">
-        O Canada!
-        <br>
-        Our home and native land
-        <br>
-        True patriot love
-        <br>
-        in all of us command
-      </h1>
+        <h1 class="montserrat mb-6">
+          O Canada!
+          <br>
+          Our home and native land
+          <br>
+          True patriot love
+          <br>
+          in all of us command
+        </h1>
       <i class="fab fa-canadian-maple-leaf"></i>
     </div>
   </section>
+  <section class="section">
+    <div>陽性者数: <span id='type'></div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </section>
 
-  <section class="hero">
-    <div class="container">
-      
-    </div>
+  <section class="section">
+    <div class="mx-4 columns is-multiline is-mobile">
+        <div class="column is-one-fifth-widescreen is-one-third-tablet is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <a data-flickr-embed="true" href="https://www.flickr.com/photos/134760388@N08/20089915295/in/album-72157656112341170/"
+                  title="Koerner Library and Ponderosa complex and Vancouver Island at sunset"><img
+                    src="https://live.staticflickr.com/458/20089915295_711d75bd15_w.jpg" 
+                    alt="Koerner Library and Ponderosa complex and Vancouver Island at sunset"></a>
+                <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">University of British Columbia</p>
+                  <p class="subtitle is-7">ブリティッシュ・コロンビア大学</p>
+                </div>
+              </div>
+              <div class="content is-size-7">
+                <i class="fas fa-map-marker-alt"></i> ブリティッシュコロンビア州<br>
+                <span class="tag">全学</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth-widescreen is-one-third-tablet is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <a data-flickr-embed="true" href="https://www.flickr.com/photos/usask/32775604443/in/album-72157681714454075/"
+                  title="USask campus in Fall"><img src="https://live.staticflickr.com/3927/32775604443_9aa804dab1_w.jpg"
+                    alt="USask campus in Fall"></a>
+                <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">University of Saskatchewan</p>
+                  <p class="subtitle is-7">サスカチュワン大学</p>
+                </div>
+              </div>
+              <div class="content is-size-7">
+                <i class="fas fa-map-marker-alt"></i> サスカチュワン州<br>
+                <span class="tag">全学</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth-widescreen is-one-third-tablet is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <a data-flickr-embed="true" href="https://www.flickr.com/photos/umontreal/49640915597/in/album-72157713425792497/"
+                  title="Universités Canada"><img src="https://live.staticflickr.com/65535/49640915597_39e8cee356_w.jpg" alt="Université de Montréal"></a>
+                <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">University of Montreal</p>
+                  <p class="subtitle is-7">モントリオール大学</p>
+                </div>
+              </div>
+              <div class="content is-size-7">
+                <i class="fas fa-map-marker-alt"></i> ケベック州<br>
+                <span class="tag">全学</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth-widescreen is-one-third-tablet is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <a data-flickr-embed="true"
+                  href="https://www.flickr.com/photos/stuarthendrie/38913094882/in/photolist-22hBMp1-mbcfY-mbf1P-mbekD-mbfA2-mbcVk-mb8x1-mbdj9-mbau9-mb9CG-mbbje-mb971-mbbom-mbfmT-mbdxW-ty89N2-uuxC39-uuY63X-uuxtWQ-ty7KMx-uvbi4n-usDeaQ-uuxx39-uuxgMu-uuY6Bc-uuxfos-udnv89-ty7HYT-uuxuQy-uuxdF9-uuYeR8-udvy5B-uuYdkH-uuYjhT-ty8asP-udvwT8-uvbnQM-usDgGJ-uuYcDT-uuxvqb-txX2fC-uuxyso-udvR72-txWJyb-txWDtb-uuxqmJ-duVZeT-dv2A8h-duW1Ea-dv2ABQ"
+                  title="Early Evening at Brock University"><img src="https://live.staticflickr.com/4593/38913094882_602b5433dc_w.jpg"
+                    alt="Early Evening at Brock University"></a>
+                <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">Brock University</p>
+                  <p class="subtitle is-7">ブロック大学</p>
+                </div>
+              </div>
+              <div class="content is-size-7">
+                <i class="fas fa-map-marker-alt"></i> オンタリオ州<br>
+                <span class="tag is-warning is-light">体育専門学群</span>
+                <span class="tag is-success is-light">人間総合科学研究科*</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth-widescreen is-one-third-tablet is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <a data-flickr-embed="true" href="https://www.flickr.com/photos/suckamc/5061486342/in/pool-upei/" title="UPEI Quad"><img
+                    src="https://live.staticflickr.com/4150/5061486342_36d9bd1af6_w.jpg" alt="UPEI Quad"></a>
+                <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">University of Prince Edward Island</p>
+                  <p class="subtitle is-7">プリンス・エドワード島大学</p>
+                </div>
+              </div>
+              <div class="content is-size-7">
+                <i class="fas fa-map-marker-alt"></i> プリンスエドワードアイランド州<br>
+                <span class="tag is-warning is-light">人文・文化学群 (比較文化)</span>
+                <span class="tag is-success is-light">人文社会科学研究科</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </section>
   
   <div class="section-light px-6 py-5" data-aos="fade-in">
     <h1 class="section-title has-text-centered">
-      Tsukuba to the world
+      大自然と多様性が織りなす可能性
     </h1>
     <h1 class="section-subtitle has-text-centered">
-      筑波大生の軌跡
     </h1>
     <div class="container has-text-centered">
       <article>
@@ -76,6 +240,7 @@
       duration: 1200,
     });
   </script>
+  <!-- <script type="text/javascript" src="./covid19.js"></script> -->
 </body>
 
 </html>
