@@ -21,7 +21,7 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     var fullList = [['Province(州)', 'Cumulative cases (累計陽性者数)', 'Population (人口)']];
-    const provinceList = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Northwest Territories', 'Nunavut', 'Yukon'];
+    const provinceList = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nunavut', 'Northwest Territories', 'Ontario', 'Prince Edward Island', 'Quebec', 'Nova Scotia', 'Saskatchewan', 'Yukon'];
     const populationByProvince = [4067175, 4648055, 1278365, 747101, 519716, 923598, 13448494, 142907, 8164361, 1098352, 41786, 35944, 35874];
     fetch('https://api.opencovid.ca/summary?loc=prov') // APIのURL
       .then(response => {
@@ -42,7 +42,7 @@
           'packages': ['geochart'],
           // Note: you will need to get a mapsApiKey for your project.
           // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-          'mapsApiKey': 'AIzaSyBPLT7zxufGM4OF6CQbq9mrkESLODBntyI'
+          'mapsApiKey': 'AIzaSyDNqgg0xsr8YtsHBeItUtC9L2jlZr0gOAo'
         });
         console.log("drawing");
         google.charts.setOnLoadCallback(drawMarkersMap);
