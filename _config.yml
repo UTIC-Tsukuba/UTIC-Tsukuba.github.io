@@ -1,0 +1,11 @@
+theme: jekyll-theme-cayman
+twitter:
+  username: U_TIC
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: ./image/canada-banner.png
+        height: 1080
+        width: 1920
