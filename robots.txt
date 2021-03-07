@@ -1,0 +1,5 @@
+User-agent: Twitterbot
+Disallow:
+
+User-agent: *
+Sitemap: https://utic-tsukuba.github.io/sitemap.xml
