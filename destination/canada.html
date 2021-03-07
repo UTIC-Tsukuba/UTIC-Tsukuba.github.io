@@ -33,12 +33,12 @@
         // 取得したURLをスラッシュ記号で分割し、犬種を表した要素を取得する
         const jsondata = myJson['summary']
         console.log(jsondata);
-        var stockList = [['<th><td>' + '累計感染者数' + '</td><td>' + '現在の感染者数' + '</td><td>' + '累計死亡者数' + '</td><td>' + '検査率' + '</td><td>' + 'ワクチン接種率' + '</td></th>']];
+        var stockList = [['<thead><tr><th>' + '州' + '</th><th>' + '累計陽性者数' + '</th><th>' + '累計陽性者率(人口比)' + '</th><th>' + '累計死亡者数' + '</th><th>' + '累計死亡者数(人口比)' + '</th><th>' + '検査率(人口比)' + '</th><th>' + 'ワクチン接種率(人口比)' + '</th></tr></thead>']];
         for (var i=0; i<provinceCodeList.length; i++){
           console.log(provinceCodeList[i]);
           if (i !== 11) {
             fullList.push([provinceCodeList[i], Math.round(jsondata[i]['cumulative_cases'] / populationByProvince[i] * 1000) / 1000, jsondata[i]['cumulative_cases']]);
-            stockList.push('<tr><td>' + provinceCodeList[i] + '</td><td>' + jsondata[i]['cumulative_cases'] + '</td ><td>' + jsondata[i]['active_cases'] + '</td><td>' + jsondata[i]['cumulative_deaths'] + '</td><td>' + Math.round(jsondata[i]['cumulative_testing'] / populationByProvince[i] * 1000) / 1000 + '</td><td>' + Math.round(jsondata[i]['cumulative_cvaccine'] / populationByProvince[i] * 1000) / 1000 + '</td></tr>');　// = ではなく += を使う
+            stockList.push('<tr><td>' + provinceCodeList[i] + '</td><td>' + jsondata[i]['cumulative_cases'] + '</td><td>' + Math.round(jsondata[i]['cumulative_cases'] / populationByProvince[i] * 1000) / 1000 + '</td ><td>' + jsondata[i]['cumulative_deaths'] + '</td><td>' +  Math.round(jsondata[i]['cumulative_deaths'] / populationByProvince[i] * 100000) / 100000 + '</td><td>' + Math.round(jsondata[i]['cumulative_testing'] / populationByProvince[i] * 1000) / 1000 + '</td><td>' + Math.round(jsondata[i]['cumulative_cvaccine'] / populationByProvince[i] * 1000) / 1000 + '</td></tr>');　// = ではなく += を使う
           }
         }
         document.getElementById('stats').innerHTML = stockList.join('');
@@ -243,7 +243,8 @@
     <h1 class="section-subtitle has-text-centered">
       新型コロナウイルス感染状況
     </h1>
-    <div id="regions_div" class="mb-4" style="width: 90vw; height: 40vw; margin: 0 auto;"></div>
+    <p class="has-text-centered mb-4">Cumulative cases per capita | 州内人口あたりの累計陽性者数</p>
+    <div id="regions_div" class="mb-6" style="width: 90vw; height: 40vw; margin: 0 auto;"></div>
     <div class="has-text-centered mb-4">
       <table id="stats" class="table is-striped is-narrow" style="margin: 0 auto;">
       </table>

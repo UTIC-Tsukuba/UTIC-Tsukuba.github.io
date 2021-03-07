@@ -281,4 +281,8 @@ h1.motto {
     border-color: orange;
   }
 }
+
+table#stats tr {
+  text-align: right;
+}
 /*# sourceMappingURL=style.css.map */
