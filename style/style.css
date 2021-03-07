@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 html {
   font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
 }
 
 .has-vertically-aligned-content {
@@ -182,18 +186,23 @@ d .fa-download {
   background-size: 100vw;
 }
 
-.odakyu h1 {
+h1.motto {
   font-weight: bold;
-  font-size: 6rem;
+  font-size: 4rem;
   line-height: 1;
+  background: #ff0000;
+  background: -webkit-gradient(linear, left top, right top, from(#FF0080), color-stop(#FF8C00), to(#40E0D0));
+  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (max-width: 720px) {
-  .odakyu h1 {
+  h1.motto h1 {
     font-size: 2.5rem;
     word-break: break-word;
   }
-  .odakyu br {
+  h1.motto br.mobile {
     display: none;
   }
 }

@@ -20,9 +20,11 @@
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    var fullList = [['Province(州)', 'Cumulative cases (累計陽性者数)', 'Population (人口)']];
-    const provinceList = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nunavut', 'Northwest Territories', 'Ontario', 'Prince Edward Island', 'Quebec', 'Nova Scotia', 'Saskatchewan', 'Yukon'];
-    const populationByProvince = [4067175, 4648055, 1278365, 747101, 519716, 923598, 13448494, 142907, 8164361, 1098352, 41786, 35944, 35874];
+    var fullList = [['Province(州)', 'Cumulative cases per capita (累計陽性者数の人口比)', 'Cumulative cases (累計陽性者数)']];
+    // const fullList = [['Province(州)', 'Cumulative cases (累計陽性者数)', 'Population (人口)'], ['CA-MB', 1000, 2000]];
+    const provinceCodeList = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Nunavut', 'Northwest Territories', 'Ontario', 'Prince Edward Island', 'Quebec', 'Repatriated', 'Saskatchewan', 'Yukon'];
+    // const provinceCodeList = ['CA-AB', 'CA-BC', 'CA-MB', 'CA-NB', 'CA-NL', 'CA-NS', 'CA-NU', 'CA-NT', 'CA-ON', 'CA-PE', 'CA-QC', 'Repatriated', 'CA-SK', 'CA-YT'];
+    const populationByProvince = [4067175, 4648055, 1278365, 747101, 519716, 923598, 35944, 41786, 13448494, 142907, 8164361, 0, 1098352, 35874];
     fetch('https://api.opencovid.ca/summary?loc=prov') // APIのURL
       .then(response => {
         return response.json();
@@ -31,11 +33,15 @@
         // 取得したURLをスラッシュ記号で分割し、犬種を表した要素を取得する
         const jsondata = myJson['summary']
         console.log(jsondata);
-        for (var i=0; i<provinceList.length; i++){
-          // console.log(provinceList[i]);
-          fullList.push([provinceList[i], jsondata[i]['cumulative_cases'], populationByProvince[i]]);
+        var stockList = [['<th><td>' + '累計感染者数' + '</td><td>' + '現在の感染者数' + '</td><td>' + '累計死亡者数' + '</td><td>' + '検査率' + '</td><td>' + 'ワクチン接種率' + '</td></th>']];
+        for (var i=0; i<provinceCodeList.length; i++){
+          console.log(provinceCodeList[i]);
+          if (i !== 11) {
+            fullList.push([provinceCodeList[i], Math.round(jsondata[i]['cumulative_cases'] / populationByProvince[i] * 1000) / 1000, jsondata[i]['cumulative_cases']]);
+            stockList.push('<tr><td>' + provinceCodeList[i] + '</td><td>' + jsondata[i]['cumulative_cases'] + '</td ><td>' + jsondata[i]['active_cases'] + '</td><td>' + jsondata[i]['cumulative_deaths'] + '</td><td>' + Math.round(jsondata[i]['cumulative_testing'] / populationByProvince[i] * 1000) / 1000 + '</td><td>' + Math.round(jsondata[i]['cumulative_cvaccine'] / populationByProvince[i] * 1000) / 1000 + '</td></tr>');　// = ではなく += を使う
+          }
         }
-        console.log(fullList);
+        document.getElementById('stats').innerHTML = stockList.join('');
       })
       .then(function(){
         google.charts.load('current', {
@@ -44,19 +50,21 @@
           // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
           'mapsApiKey': 'AIzaSyDNqgg0xsr8YtsHBeItUtC9L2jlZr0gOAo'
         });
-        console.log("drawing");
         google.charts.setOnLoadCallback(drawMarkersMap);
         function drawMarkersMap() {
           var data = google.visualization.arrayToDataTable(fullList);
 
           var options = {
             region: 'CA',
-            displayMode: 'markers',
-            resolution: 'provinces'
+            // displayMode: 'markers',
+            resolution: 'provinces',
+            colorAxis: {colors: ['darkgreen', 'gold']},
+
+            // 'mercator', 'alberts', 'lambert', 'kavrayskiy-vii'
+            // projection: 'mercator';
           };
 
           var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
           chart.draw(data, options);
         }
       });
@@ -66,8 +74,8 @@
 <body>
 
   <section class="hero is-fullheight">
-    <div class="container odakyu has-vertically-aligned-content px-6">
-        <h1 class="montserrat mb-6">
+    <div class="container has-vertically-aligned-content px-6">
+      <h1 class="montserrat motto mb-6">
           O Canada!
           <br>
           Our home and native land
@@ -75,14 +83,11 @@
           True patriot love
           <br>
           in all of us command
-        </h1>
+      </h1>
       <i class="fab fa-canadian-maple-leaf"></i>
     </div>
   </section>
-  <section class="section">
-    <div>陽性者数: <span id='type'></div>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
-  </section>
+
 
   <section class="section">
     <div class="mx-4 columns is-multiline is-mobile">
@@ -221,9 +226,9 @@
       <article>
         隴西の李徴は博學才穎、天寶の末年、若くして名を虎榜に連ね、ついで江南尉に補せられたが、性、狷介、自ら恃む所頗る厚く、賤吏に甘んずるを潔しとしなかつた。いくばくもなく官を退いた後は、故山、くわく略に歸臥し、人と交を絶つて、ひたすら詩作に耽つた。下吏となつて長く膝を俗惡な大官の前に屈するよりは、詩家としての名を死後百年に遺さうとしたのである。しかし、文名は容易に揚らず、生活は日を逐うて苦しくなる。李徴は漸く焦躁に驅られて來た。この頃から其の容貌も峭刻となり、肉落ち骨秀で、眼光のみ徒らに烱々として、曾て進士に登第した頃の豐頬の美少年の俤は、何處に求めやうもない。
       </article>
-      <figure class="mobile-fullwidth my-6">
+      <!-- <figure class="mobile-fullwidth my-6">
         <img src="../image/canada-banner-20200221.png">
-      </figure>
+      </figure> -->
       <div class="contents py-4 has-text-centered">
         <a class="button is-rounded is-green is-large explore" data-aos="zoom-in" data-aos-easing="linear"
           data-aos-duration="200">EXPLORE</a>
@@ -231,6 +236,19 @@
     </div>
   </div>
 
+  <div class="section-light px-6 py-5" data-aos="fade-in">
+    <h1 class="section-title has-text-centered">
+      COVID-19 Current Situation
+    </h1>
+    <h1 class="section-subtitle has-text-centered">
+      新型コロナウイルス感染状況
+    </h1>
+    <div id="regions_div" class="mb-4" style="width: 90vw; height: 40vw; margin: 0 auto;"></div>
+    <div class="has-text-centered mb-4">
+      <table id="stats" class="table is-striped is-narrow" style="margin: 0 auto;">
+      </table>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../js/showcase.js"></script>

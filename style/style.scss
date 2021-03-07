@@ -2,6 +2,9 @@
 
 html {
   font-family: Helvetica, Arial, sans-serif;
+  font-kerning: normal;
+  font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
 }
 
 .has-vertically-aligned-content {
@@ -188,12 +191,17 @@ d .fa-download {
   background-image: url(https://images.pexels.com/photos/589808/pexels-photo-589808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   filter: saturate(200%);
   background-size: 100vw;
+}
 
-  h1 {
-    font-weight: bold;
-    font-size: 6rem;
-    line-height: 1;
-  }
+h1.motto {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1;
+  background: #ff0000;
+  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   @media screen and (max-width: 720px) {
     h1 {
@@ -201,7 +209,7 @@ d .fa-download {
       word-break: break-word;
     }
 
-    br {
+    br.mobile {
       display: none;
     }
   }
@@ -231,7 +239,7 @@ d .fa-download {
     letter-spacing: .15em;
     /* Adjust as needed */
     animation: typing 1.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+      blink-caret .75s step-end infinite;
   }
 }
 
