@@ -82,6 +82,13 @@ body {
   padding-bottom: 0.5rem;
 }
 
+@media screen and (max-width: 640px) {
+  .section-title {
+    line-height: 1.2;
+    font-size: 1.75rem;
+  }
+}
+
 .section-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
