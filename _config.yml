@@ -6,6 +6,6 @@ defaults:
       path: ""
     values:
       image:
-        path: ./image/canada-banner.png
+        path: ./image/canada-banner-20200221.png
         height: 1080
         width: 1920
