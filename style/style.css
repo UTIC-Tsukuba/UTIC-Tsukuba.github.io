@@ -189,7 +189,7 @@ d .fa-download {
 h1.motto {
   font-weight: bold;
   font-size: 4rem;
-  line-height: 1;
+  line-height: 1.2;
   background: #ff0000;
   background: -webkit-gradient(linear, left top, right top, from(#FF0080), color-stop(#FF8C00), to(#40E0D0));
   background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
@@ -197,13 +197,11 @@ h1.motto {
   -webkit-text-fill-color: transparent;
 }
 
-@media screen and (max-width: 720px) {
-  h1.motto h1 {
-    font-size: 2.5rem;
+@media screen and (max-width: 960px) {
+  h1.motto {
+    font-size: 2rem;
+    line-height: 1.2;
     word-break: break-word;
-  }
-  h1.motto br.mobile {
-    display: none;
   }
 }
 
@@ -222,7 +220,7 @@ h1.motto {
           justify-content: center;
 }
 
-.typewriter h1.section-title {
+.typewriter h1 {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -236,8 +234,8 @@ h1.motto {
   /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em;
   /* Adjust as needed */
-  -webkit-animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
-          animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  -webkit-animation: typing 1.5s steps(12, end);
+          animation: typing 1.5s steps(12, end);
 }
 
 @-webkit-keyframes typing {
@@ -259,30 +257,125 @@ h1.motto {
 }
 
 /* The typewriter cursor effect */
-@-webkit-keyframes blink-caret {
-  from {
-    border-color: transparent;
-  }
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
+@-webkit-keyframes blink-caret {}
+@keyframes blink-caret {}table#stats tr {
+  text-align: right;
 }
-@keyframes blink-caret {
-  from {
-    border-color: transparent;
+
+.mapleleaf {
+  margin: 0 auto;
+  width: 30vw;
+  max-width: 200px;
+  color: white;
+}
+
+.mapleleaf-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.mapleleaf-wrapper:before {
+  -webkit-animation: 4s cubic-bezier(0.4, 0, 0.2, 1) 0s infinite forwards giragira;
+          animation: 4s cubic-bezier(0.4, 0, 0.2, 1) 0s infinite forwards giragira;
+  background: #ff0000;
+  bottom: 0;
+  content: '';
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+#mapleleaf-path {
+  fill: white;
+  width: 100;
+}
+
+@-webkit-keyframes giragira {
+  80% {
+    clip-path: circle(0% at 0 100%);
+    -webkit-clip-path: circle(0 at 0 100%);
+    opacity: 0.5;
   }
-  to {
-    border-color: transparent;
+  90% {
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(100% at 50% 50%);
+    opacity: 0.5;
   }
-  50% {
-    border-color: orange;
+  100%,
+  0% {
+    clip-path: circle(0 at 100% 0);
+    -webkit-clip-path: circle(0% at 100% 0);
+    opacity: 0.5;
   }
 }
 
-table#stats tr {
-  text-align: right;
+@keyframes giragira {
+  80% {
+    clip-path: circle(0% at 0 100%);
+    -webkit-clip-path: circle(0 at 0 100%);
+    opacity: 0.5;
+  }
+  90% {
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(100% at 50% 50%);
+    opacity: 0.5;
+  }
+  100%,
+  0% {
+    clip-path: circle(0 at 100% 0);
+    -webkit-clip-path: circle(0% at 100% 0);
+    opacity: 0.5;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .visible.slide-in {
+    -webkit-animation: 1s ease-in-out reveal;
+            animation: 1s ease-in-out reveal;
+  }
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.is-4 {
+  margin: 0;
+  padding: 0;
+}
+
+.is-4 img {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
