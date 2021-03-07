@@ -5,6 +5,11 @@ html {
           font-kerning: normal;
   font-feature-settings: "palt";
   -webkit-font-feature-settings: "palt";
+  width: 100%;
+}
+
+body {
+  width: 100%;
 }
 
 .has-vertically-aligned-content {
@@ -34,7 +39,6 @@ html {
 }
 
 .section-light {
-  padding-top: 2rem;
   color: #2a2a2a;
 }
 
@@ -69,7 +73,7 @@ html {
 
 .section-title {
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 2.5rem;
   line-height: 1;
@@ -338,6 +342,11 @@ h1.motto {
   }
 }
 
+.visible.circular-in {
+  -webkit-animation: 1s ease-in-out guruguru;
+          animation: 1s ease-in-out guruguru;
+}
+
 @-webkit-keyframes reveal {
   0% {
     opacity: 0;
@@ -370,6 +379,28 @@ h1.motto {
   }
 }
 
+@-webkit-keyframes guruguru {
+  0% {
+    -webkit-transform: scale(0.5) rotate(-25deg);
+            transform: scale(0.5) rotate(-25deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes guruguru {
+  0% {
+    -webkit-transform: scale(0.5) rotate(-25deg);
+            transform: scale(0.5) rotate(-25deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+}
+
 .is-4 {
   margin: 0;
   padding: 0;
@@ -377,5 +408,76 @@ h1.motto {
 
 .is-4 img {
   width: 100%;
+}
+
+.flip {
+  background-color: transparent;
+  width: 100%;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+@media screen and (max-width: 419px) {
+  .flip {
+    height: 80vw;
+  }
+}
+
+@media screen and (min-width: 420px) and (max-width: 680px) {
+  .flip {
+    height: 20vh;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 959px) {
+  .flip {
+    height: 25vw;
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1215px) {
+  .flip {
+    height: 20vw;
+  }
+}
+
+@media screen and (min-width: 1216px) {
+  .flip {
+    height: 25vh;
+  }
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.flip:hover .flip-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden !important;
+  /* Safari */
+  backface-visibility: hidden !important;
+  text-align: left;
+}
+
+.flip-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /*# sourceMappingURL=style.css.map */
