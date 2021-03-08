@@ -88,6 +88,7 @@ body {
   letter-spacing: 2px;
   padding-top: 3rem;
   padding-bottom: 0.5rem;
+
   @media screen and (max-width: 640px) {
     line-height: 1.2;
     font-size: 1.75rem;
@@ -361,18 +362,10 @@ table#stats {
   0% {
     transform: scale(0.5) rotate(-25deg);
   }
+
   100% {
     transform: scale(1) rotate(0deg);
   }
-}
-
-.is-4 {
-  img {
-    width: 100%;
-  }
-
-  margin: 0;
-  padding: 0;
 }
 
 .flip {
@@ -383,6 +376,7 @@ table#stats {
   @media screen and (max-width: 419px) {
     height: 80vw;
   }
+
   @media screen and (min-width: 420px) and (max-width: 680px) {
     height: 20vh;
   }
@@ -426,4 +420,86 @@ table#stats {
 
 .flip-back {
   transform: rotateY(180deg);
+}
+
+.reveal-circular-wrapper {
+  backface-visibility: hidden;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.visible.reveal-circular-wrapper {
+  animation: reveal-circular 2.5s cubic-bezier(.4, 0, .2, 1);
+  overflow: hidden;
+  position: relative;
+  will-change: contents;
+
+  &:hover,
+  &:active {
+    img {
+      object-fit: cover;
+      // filter: brightness(75%);
+      transition: 0.5s ease-in;
+      display: inline-block;
+      position: relative;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .hover-box {
+      opacity: 1;
+      transition: 0.25s ease-in;
+      transition-delay: 0.25s;
+    }
+  }
+
+  img {
+    transition: 0.25s ease-out;
+    border: 1px solid transparent;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .hover-box {
+    border-radius: 4px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5vw;
+    left: 20vw;
+    right: 5vw;
+    transition: 0.25s ease-out;
+    -webkit-transition: 0.25s ease-out;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-weight: bold;
+  }
+}
+
+@keyframes reveal-circular {
+  0% {
+    filter: brightness(75%) blur(5px);
+    clip-path: circle(0 at 50% 50%);
+    -webkit-clip-path: circle(0 at 50% 50%);
+  }
+
+  100% {
+    filter: brightness(100%);
+    clip-path: circle(100% at 50% 50%);
+    -webkit-clip-path: circle(100% at 50% 50%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

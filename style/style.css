@@ -408,15 +408,6 @@ h1.motto {
   }
 }
 
-.is-4 {
-  margin: 0;
-  padding: 0;
-}
-
-.is-4 img {
-  width: 100%;
-}
-
 .flip {
   background-color: transparent;
   width: 100%;
@@ -486,5 +477,121 @@ h1.motto {
 .flip-back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+.reveal-circular-wrapper {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: block;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.visible.reveal-circular-wrapper {
+  -webkit-animation: reveal-circular 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+          animation: reveal-circular 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  will-change: contents;
+}
+
+.visible.reveal-circular-wrapper:hover img, .visible.reveal-circular-wrapper:active img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+  display: inline-block;
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.visible.reveal-circular-wrapper:hover .hover-box, .visible.reveal-circular-wrapper:active .hover-box {
+  opacity: 1;
+  -webkit-transition: 0.25s ease-in;
+  transition: 0.25s ease-in;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.visible.reveal-circular-wrapper img {
+  -webkit-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+  border: 1px solid transparent;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.visible.reveal-circular-wrapper .hover-box {
+  border-radius: 4px;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5vw;
+  left: 20vw;
+  right: 5vw;
+  transition: 0.25s ease-out;
+  -webkit-transition: 0.25s ease-out;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: bold;
+}
+
+@-webkit-keyframes reveal-circular {
+  0% {
+    -webkit-filter: brightness(75%) blur(5px);
+            filter: brightness(75%) blur(5px);
+    clip-path: circle(0 at 50% 50%);
+    -webkit-clip-path: circle(0 at 50% 50%);
+  }
+  100% {
+    -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+    clip-path: circle(100% at 50% 50%);
+    -webkit-clip-path: circle(100% at 50% 50%);
+  }
+}
+
+@keyframes reveal-circular {
+  0% {
+    -webkit-filter: brightness(75%) blur(5px);
+            filter: brightness(75%) blur(5px);
+    clip-path: circle(0 at 50% 50%);
+    -webkit-clip-path: circle(0 at 50% 50%);
+  }
+  100% {
+    -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+    clip-path: circle(100% at 50% 50%);
+    -webkit-clip-path: circle(100% at 50% 50%);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */
