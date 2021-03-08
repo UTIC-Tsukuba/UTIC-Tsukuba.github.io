@@ -486,7 +486,7 @@ table#stats {
 
 @keyframes reveal-circular {
   0% {
-    filter: brightness(75%) blur(5px);
+    filter: brightness(75%) blur(10px);
     clip-path: circle(0 at 50% 50%);
     -webkit-clip-path: circle(0 at 50% 50%);
   }

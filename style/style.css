@@ -496,8 +496,8 @@ h1.motto {
 
 @-webkit-keyframes reveal-circular {
   0% {
-    -webkit-filter: brightness(75%) blur(5px);
-            filter: brightness(75%) blur(5px);
+    -webkit-filter: brightness(75%) blur(10px);
+            filter: brightness(75%) blur(10px);
     clip-path: circle(0 at 50% 50%);
     -webkit-clip-path: circle(0 at 50% 50%);
   }
@@ -511,8 +511,8 @@ h1.motto {
 
 @keyframes reveal-circular {
   0% {
-    -webkit-filter: brightness(75%) blur(5px);
-            filter: brightness(75%) blur(5px);
+    -webkit-filter: brightness(75%) blur(10px);
+            filter: brightness(75%) blur(10px);
     clip-path: circle(0 at 50% 50%);
     -webkit-clip-path: circle(0 at 50% 50%);
   }
