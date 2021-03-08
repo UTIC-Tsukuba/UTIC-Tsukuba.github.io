@@ -42,12 +42,12 @@
         // 取得したURLをスラッシュ記号で分割し、犬種を表した要素を取得する
         const jsondata = myJson['summary']
         console.log(jsondata);
-        var stockList = [['<thead><tr><th>' + '州' + '</th><th>' + '累計陽性者数' + '</th><th>' + '累計陽性者率(人口比)' + '</th><th>' + '累計死亡者数' + '</th><th>' + '累計死亡者数(人口比)' + '</th><th>' + '検査率(人口比)' + '</th><th>' + 'ワクチン接種率(人口比)' + '</th></tr></thead>']];
+        var stockList = [['<thead><tr><th>' + '州' + '</th><th>' + '累計陽性者数' + '</th><th>' + '累計陽性者率(人口比)' + '</th><th>' + '検査率(人口比)' + '</th><th>' + 'ワクチン接種率(人口比)' + '</th></tr></thead>']];
         for (var i=0; i<provinceCodeList.length; i++){
           console.log(provinceCodeList[i]);
           if (i !== 11) {
             fullList.push([provinceCodeList[i], Math.round(jsondata[i]['cumulative_cases'] / populationByProvince[i] * 1000) / 1000, jsondata[i]['cumulative_cases']]);
-            stockList.push('<tr><td>' + provinceCodeList[i] + '</td><td>' + jsondata[i]['cumulative_cases'] + '</td><td>' + Math.round(jsondata[i]['cumulative_cases'] / populationByProvince[i] * 1000) / 1000 + '</td ><td>' + jsondata[i]['cumulative_deaths'] + '</td><td>' +  Math.round(jsondata[i]['cumulative_deaths'] / populationByProvince[i] * 100000) / 100000 + '</td><td>' + Math.round(jsondata[i]['cumulative_testing'] / populationByProvince[i] * 1000) / 1000 + '</td><td>' + Math.round(jsondata[i]['cumulative_cvaccine'] / populationByProvince[i] * 1000) / 1000 + '</td></tr>');　// = ではなく += を使う
+            stockList.push('<tr><td>' + provinceCodeList[i] + '</td><td>' + jsondata[i]['cumulative_cases'] + '</td><td>' + Math.round(jsondata[i]['cumulative_cases'] / populationByProvince[i] * 1000) / 1000 + '</td ><td>' + Math.round(jsondata[i]['cumulative_testing'] / populationByProvince[i] * 1000) / 1000 + '</td><td>' + Math.round(jsondata[i]['cumulative_cvaccine'] / populationByProvince[i] * 1000) / 1000 + '</td></tr>');　// = ではなく += を使う
           }
         }
         document.getElementById('stats').innerHTML = stockList.join('');
@@ -284,7 +284,7 @@
     </div>
   </div>
 
-  <div class="section-light px-5 py-5" data-aos="fade-in">
+  <div class="section-light px-5 py-5 mb-5" data-aos="fade-in">
     <h1 class="section-title has-text-centered">
       高い教育水準と<br class="is-br-mobile" />充実したプログラム
     </h1>
@@ -302,13 +302,13 @@
     </div>
   </div>
 
-  <a data-trigger class="reveal-circular-wrapper">
+  <div data-trigger class="reveal-circular-wrapper">
     <img src="../image/parliamenthill.jpg">
-    <div class="hover-box is-block px-4 py-4">
-      <div class="title is-4 has-text-white">The Maple Leaf Flag</div>
+    <!-- <div data-triger class="hover-box is-block container">
+      <div class="title is-4">The Maple Leaf Flag</div>
       <p>カエデの葉が中央にあしらわれた現在のカナダ国旗は、1965年に制定されたものです。つまり1964年の東京オリンピックの当時は、まだ使われていなかったということですね！</p>
-    </div>
-  </a>
+    </div> -->
+  </div>
 
 
   <div class="section-light px-5 py-6" data-aos="fade-in">
@@ -321,6 +321,12 @@
       <article>
         例年では、トロント大学などの語学学校に3週間程度の語学留学を行う大学主催のプログラムが行われています。大学付属の語学学校という信頼が強みとなっています。
       </article>
+      <div class="has-text-centered my-4">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FUTGlobalCommons%2Fposts%2F2080921715340387&width=500&show_text=true&height=678&appId"
+          width="80%" height="700px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
     </div>
   </div>
 
@@ -377,7 +383,7 @@
         <div class="flip column is-3-widescreen is-6-tablet is-12-mobile"">
           <div class="flip-inner">
             <div class="flip-front notification has-background-light">
-              <p class="title">No</p>
+              <p class="title">Q4</p>
               <p class="">カナダはイギリス連邦の一員であるので、すべての州においてコモン・ロー(英米法)を原則とした法体系を持っている。</p>
             </div>
             <div class="flip-back notification has-background-danger has-text-white">

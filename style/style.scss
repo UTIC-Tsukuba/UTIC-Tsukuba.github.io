@@ -381,11 +381,11 @@ table#stats {
     height: 20vh;
   }
 
-  @media screen and (min-width: 681px) and (max-width: 959px) {
-    height: 25vw;
+  @media screen and (min-width: 681px) and (max-width: 919px) {
+    height: 28vw;
   }
 
-  @media screen and (min-width: 960px) and (max-width: 1215px) {
+  @media screen and (min-width: 920px) and (max-width: 1215px) {
     height: 20vw;
   }
 
@@ -422,62 +422,54 @@ table#stats {
   transform: rotateY(180deg);
 }
 
-.reveal-circular-wrapper {
-  backface-visibility: hidden;
-  display: block;
-  overflow: hidden;
-  box-sizing: border-box;
-}
 
 .visible.reveal-circular-wrapper {
   animation: reveal-circular 2.5s cubic-bezier(.4, 0, .2, 1);
-  overflow: hidden;
-  position: relative;
-  will-change: contents;
+  // overflow: hidden;
+  // position: relative;
+  // will-change: contents;
 
-  &:hover,
-  &:active {
-    img {
-      object-fit: cover;
-      // filter: brightness(75%);
-      transition: 0.5s ease-in;
-      display: inline-block;
-      position: relative;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
+  // &:hover,
+  // &:active {
+  //   img {
+  //     object-fit: cover;
+  //     filter: brightness(75%);
+  //     transition: 0.5s ease-in;
+  //     display: inline-block;
+  //     position: relative;
+  //     backface-visibility: hidden;
+  //     -webkit-backface-visibility: hidden;
+  //   }
 
-    .hover-box {
-      opacity: 1;
-      transition: 0.25s ease-in;
-      transition-delay: 0.25s;
-    }
-  }
+  //   .hover-box {
+  //     opacity: 1;
+  //     transition: 0.25s ease-in;
+  //     transition-delay: 0.25s;
+  //   }
+  // }
 
-  img {
-    transition: 0.25s ease-out;
-    border: 1px solid transparent;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
+  // img {
+  //   transition: 0.25s ease-out;
+  //   border: 1px solid transparent;
+  //   backface-visibility: hidden;
+  //   -webkit-backface-visibility: hidden;
+  // }
 
-  .hover-box {
-    border-radius: 4px;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: absolute;
-    bottom: 5vw;
-    left: 20vw;
-    right: 5vw;
-    transition: 0.25s ease-out;
-    -webkit-transition: 0.25s ease-out;
-    background-color: rgba(255, 255, 255, 0.25);
-    color: white;
-    font-weight: bold;
-  }
+  // .hover-box {
+  //   border-radius: 4px;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   cursor: pointer;
+  //   position: absolute;
+  //   bottom: 5vw;
+  //   left: 20vw;
+  //   right: 5vw;
+  //   animation: fade-in 2s linear;
+  //   background-color: rgba(255, 0, 0, 0.3);
+  //   color: white;
+  //   font-weight: bold;
+  // }
 }
 
 @keyframes reveal-circular {
