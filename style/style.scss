@@ -82,6 +82,8 @@ body {
 .section-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-transform: uppercase;
   font-size: 2.5rem;
   line-height: 1;
@@ -98,6 +100,8 @@ body {
 .section-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: silver;
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -161,6 +165,8 @@ d .fa-download {
 
 .explore {
   font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #24A882 !important;
   letter-spacing: 2px;
   font-family: 'Montserrat', sans-serif;
@@ -194,6 +200,8 @@ d .fa-download {
 .odakyu {
   margin: 0 auto;
   font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: sans-serif;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0);
@@ -205,6 +213,8 @@ d .fa-download {
 
 h1.motto {
   font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 4rem;
   line-height: 1.2;
   background: #ff0000;
@@ -469,6 +479,8 @@ table#stats {
   //   background-color: rgba(255, 0, 0, 0.3);
   //   color: white;
   //   font-weight: bold;
+  //   -webkit-font-smoothing: antialiased;
+  //   -moz-osx-font-smoothing: grayscale;
   // }
 }
 
